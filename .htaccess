@@ -1,0 +1,60 @@
+Options -MultiViews
+
+# Activate mod_expires for this directory
+ExpiresActive on
+
+# locally cache images/videos
+ExpiresByType image/jpg "access plus 7 days"
+ExpiresByType image/jpeg "access plus 7 days"
+ExpiresByType image/gif "access plus 7 days"
+ExpiresByType image/png "access plus 7 days"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/x-javascript "access plus 1 month"
+ExpiresByType image/svg+xml "access 7 days"
+
+# Never Cache Html/php
+ExpiresByType text/html "access"
+ExpiresByType text/php "access"
+
+# cache CSS files for 24 hours
+ExpiresByType text/css "access plus 24 hours"
+
+RewriteEngine on 
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# cache control
+<IfModule mod_headers.c>
+    <FilesMatch "\\.(ico|jpe?g|png|gif|css|js)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    <FilesMatch "\\.(x?html?|php)$">
+        Header set Cache-Control "max-age=600, private, must-revalidate"
+    </FilesMatch>
+    Header unset ETag
+    Header unset Last-Modified
+</IfModule>
+
+
+<IfModule mod_mime.c>
+ AddType application/x-javascript .js
+ AddType text/css .css
+</IfModule>
+<IfModule mod_deflate.c>
+ SetOutputFilter DEFLATE
+ <IfModule mod_setenvif.c>
+  SetEnvIfNoCase Request_URI \.(?:rar|zip)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:gif|jpg|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:avi|mov|mp4)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.mp3$ no-gzip dont-vary
+ </IfModule>
+ <IfModule mod_setenvif.c>
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+ </IfModule>
+ <IfModule mod_headers.c>
+  Header append Vary User-Agent env=!dont-vary
+ </IfModule>
+</IfModule>

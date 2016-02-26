@@ -1,0 +1,5 @@
+/*!CK:2152803230!*//*1447707280,*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["yiSRT"]); }
+
+__d('TypeaheadShowLoadingIndicatorInView',['SubscriptionsHandler'],function a(b,c,d,e,f,g,h){if(c.__markCompiled)c.__markCompiled();function i(j){'use strict';this._typeahead=j;this._fetchInProgress=false;this._handler=new h();}i.prototype.enable=function(){'use strict';var j=this._typeahead.getData();this._handler.addSubscriptions(j.subscribe('beforeFetch',(function(k,l){this._fetchInProgress=true;}).bind(this)),j.subscribe('fetchComplete',(function(k,l){this._fetchInProgress=false;}).bind(this)),j.subscribe('respond',(function(k,l){if(this._fetchInProgress&&l.results.length===0)this._typeahead.getView().showLoadingIndicator();}).bind(this)));};i.prototype.disable=function(){'use strict';this._handler.release();this._handler=null;};f.exports=i;},null);

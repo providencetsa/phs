@@ -1,0 +1,142 @@
+@import url(animate.css);
+@import url(bootstrap.css);
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(fonts.css);
+@import url(metro-bootstrap.min.css);
+
+html,body
+{
+	height: 100%
+}
+
+#main
+{
+	background: #2670B6;
+	color: #FFF;	
+	background-image: url(../img/bernie.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	height: 50%
+}
+
+.jumbotron
+{
+	margin-bottom: 0;
+}
+
+
+{
+	font-size: 50px
+}
+
+.element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fa
+{
+	color: #000
+}
+
+.fa:hover
+{
+	text-decoration: none;
+	color: #2670B6;
+}
+
+a
+{
+	color: #2670b6;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+.square {
+  position: relative;
+  width: 50%;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.about
+{
+	background-size:cover;background-position:center top;width:100%
+}
+
+.abouthim
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.white a
+{
+	color: #FFF
+}
+
+.white a:hover
+{
+	color: #FFF
+}
+
+button:hover
+{
+	background: #FFF;
+	color:#777;
+}
+
+/* Kieran's mobile rules*/
+@media (max-width: 767px) {
+    /*fix weird paragraph/header overflow on mobile*/
+    center > p,
+    h2 {
+        white-space: pre-line;
+    }
+    /*size team members to full width on mobile*/
+    div.teampeople {
+        width: 98% !IMPORTANT;
+        float: left;
+        clear: both;
+    }
+}
+/*Switched footer h1 to span for SEO reasons*/
+footer span.feel-bern {
+    text-transform: uppercase;
+    font-weight: 700;    
+    font-size: 72px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 0.16em;
+}
+
+*
+{
+  font-family: 'jubilat', 'Slabo 27px';
+  font-weight: 400;
+}
+
+h1,h2
+{
+  font-family: 'freight-sans-pro', 'Open Sans';
+}

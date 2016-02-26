@@ -1,0 +1,31 @@
+@import url(animate.css);
+@import url(bootstrap.css);
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(metro-bootstrap.min.css);
+@import url(sidebar.css);
+@import url(http://ricostacruz.com/nprogress/nprogress.css);
+@import url(/index.css);
+
+#main
+{
+	background: #2670B6;
+	color: #FFF;	
+	background-image: url(../img/bernie.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+.jumbotron
+{
+	margin-bottom: 0;
+}
+
+h1
+{
+	font-size: 50px
+}
